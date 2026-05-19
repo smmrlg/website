@@ -1,4 +1,10 @@
+<script setup>
+import ContentBlock from '@/components/ContentBlock.vue';
+
+</script>
+
 <template>
+        <ContentBlock/>
 
         <section class="main-content"> <!-- Объединяем логические блоки контента -->
             <div class="full-name">
