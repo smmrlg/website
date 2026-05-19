@@ -1,10 +1,17 @@
+<script setup>
+import LoginButton from './LoginButton.vue';
+import Menu from './Menu.vue';
+
+
+</script>
+
 <template>
   <header class="app-header">
     <!-- Левая часть: Логотип -->
     <div class="header-section left">
       <p class="logo-placeholder">Логотип</p>
     </div>
-
+    
     <!-- Центральная часть: Текст -->
     <div class="header-section center">
       <h1 class="header-title"> Название </h1>
@@ -12,8 +19,14 @@
 
     <!-- Правая часть: Кнопка -->
     <div class="header-section right">
-      <button class="nav-button">Заказ</button>
+      <router-link to="/order">
+          <button class="nav-button">Заказ</button>
+      </router-link> 
     </div>
+
+    <LoginButton/>
+    <Menu/>
+  
   </header>
 </template>
 
