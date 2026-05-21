@@ -1,11 +1,36 @@
 <script setup>
-import ContentBlock from '@/components/ContentBlock.vue';
+    import ContentBlock from '@/components/ContentBlock.vue';
+    import { ref } from 'vue'; // ref обязательно нужно импортировать.
 
+    const data = ref ([ // Объявляем реактивный массив data, ref() - функция Vue которая делает массив реактивным. Объявления массива стандартный JS синтаксис в квадратных скобках.  
+        {              // Массив называется реактивным потому что если мы изменим данные, то Vue автоматически подстроится и отобразит нам новые данные.
+            id: 1, // Уникальный идентификатор объекта. 
+            mainTitle: 'Example mainTitle 1',
+            subTitle: 'Example subTitle 1'
+        },
+        {
+            id: 2,
+            mainTitle: 'Example mainTitle 2',
+            subTitle: 'Example subTitle 2'
+        },
+        {
+            id: 3,
+            mainTitle: 'Example mainTitle 3',
+            image: 'https://picsum.photos/400/500?random=2'
+        },
+        {
+            id: 4,
+            mainTitle: 'Paragraphs demonstration',
+            image: 'https://picsum.photos/400/500?random=5',
+            paragraphs: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            ],
+            buttonTitle: 'Test Button'
+        }
+    ])
 </script>
 
 <template>
-        <ContentBlock/>
-
         <section class="main-content"> <!-- Объединяем логические блоки контента -->
             <div class="full-name">
                 <h1 class="name"> FirstName SecondName </h1>
@@ -23,26 +48,20 @@ import ContentBlock from '@/components/ContentBlock.vue';
         </section>
 
     <main class="feed">
-        <section class="content"> <!-- Объединяем логические блоки контента -->
-            <div class="description"> <!-- Текстовое описание - заголовок и сам текст -->
-                <img src="https://picsum.photos/400/500?random=3" class="responsive-img"></img>
-                <h2 class="title"> Where does it come from? </h2>
-                <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p>
-                <p> Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                <button class="read-more"> Узнать больше </button>
-            </div>
-
-        </section>
-
-        <section class="content"> <!-- Объединяем логические блоки контента -->
-            <div class="description"> <!-- Текстовое описание - заголовок и сам текст -->
-                <img src="https://picsum.photos/400/500?random=6" class="responsive-img"></img>
-                <h2 class="title"> Why do we use it? </h2>
-                <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                <button class="read-more"> Узнать больше </button>
-            </div>
-        </section>
+        <ContentBlock
+            v-for = "block in data"
+            :key = "block.id"
+            :mainTitle = "block.mainTitle"
+            :subTitle = "block.subTitle" 
+            :image = "block.image"
+            :paragraphs="block.paragraphs" 
+            :buttonTitle="block.buttonTitle"      
+        /> 
+        <!-- 
+            v-for = "block in data" - v-for - цикл во Vue. Цикл берёт массив data и заносит каждый элемент массива в переменную block (которая тут же и объявлена)
+            :key = "block.id" - двоеточие - сокращение от v-bind:, двоеточие нужно чтобы показать Vue что мы хотим использовать JS код. :key необходим для Vue чтобы сборщик не запутался где какой элемент (поэтому необходимо каждому объекту присваивать уникальный id)
+            :mainTitle = "block.mainTitle"  - block.{{name}} означает что мы обращаемся к конкретному свойству объекта которые сейчас лежит в переменной block.
+        -->
 
         <section class="content" v-for="i in 5" :key="i">
             <img :src="`https://picsum.photos/400/500?random=${i+2}`" alt="Доп контент" class="responsive-img">
