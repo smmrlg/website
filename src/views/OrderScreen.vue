@@ -1,5 +1,9 @@
+<script setup> 
+import LeadForm from '@/components/LeadForm.vue';
+
+
+</script>
+
 <template>
-        <h1> Заготовка для OrderScreen.vue </h1>
-
-
+        <LeadForm/>
 </template>

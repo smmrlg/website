@@ -1,0 +1,125 @@
+/* Вайб CSS */
+
+/* Задаем переменные для удобного изменения оттенков */
+.lead-form {
+  --bg-color: #121212;
+  --form-bg: #1e1e1e;
+  --input-bg: #2a2a2a;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --pink-main: #ff2a75;
+  --pink-hover: #ff005d;
+  --pink-glow: rgba(255, 42, 117, 0.5);
+
+  background-color: var(--form-bg);
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 42, 117, 0.1);
+  border: 1px solid rgba(255, 42, 117, 0.1);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  color: var(--text-main);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Обертка для инпутов */
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Общие стили для инпутов */
+.input-fields input {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 1px solid #333;
+  color: var(--text-main);
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Цвет плейсхолдера */
+.input-fields input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Эффект при фокусе (нажатии) на инпут */
+.input-fields input:focus {
+  border-color: var(--pink-main);
+  box-shadow: 0 0 10px var(--pink-glow);
+  background-color: #242424;
+}
+
+/* Обертка для кнопок */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Общие стили для кнопок */
+.buttons button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Главная кнопка */
+.call-back {
+  background-color: var(--pink-main);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 15px var(--pink-glow);
+}
+
+.call-back:hover {
+  background-color: var(--pink-hover);
+  box-shadow: 0 6px 20px rgba(255, 0, 93, 0.7);
+  transform: translateY(-2px);
+}
+
+.call-back:active {
+  transform: translateY(1px);
+}
+
+/* Вторичная кнопка */
+.let-me-call {
+  background-color: transparent;
+  color: var(--pink-main);
+  border: 2px solid var(--pink-main);
+}
+
+.let-me-call:hover {
+  background-color: var(--pink-main);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--pink-glow);
+  transform: translateY(-2px);
+}
+
+.let-me-call:active {
+  transform: translateY(1px);
+}
