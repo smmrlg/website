@@ -36,6 +36,5 @@
             buttonTitle: {
                 type: String,
             }
-
         })
 </script>
