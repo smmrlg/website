@@ -56,7 +56,7 @@ const totalResults = computed( () => { // переменная которая д
 
 const result = computed ( () => { // новый массив result который должен содержать элементы 0-8 из массива cars
     let carsArray = [] //временный массив в который мы заносим данные из массива cars 
-    for (let i = 0; i < 9; i++) { // обычный цикл for 
+    for (let i = 0; i < ITEMS_ON_ONE_PAGE; i++) { // обычный цикл for 
       carsArray[i] = cars.value [i] // элементу i массива carsArray присваиваем элемент i из массива cars 
     }
     return carsArray
