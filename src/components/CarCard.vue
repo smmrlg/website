@@ -11,8 +11,9 @@ const cars = ref(carsData)
   Math.ceil - JS функция, которая округляет результат вычислений большую сторону. 
  computed () - Вычисляемое свойство Vue
  ref() - реактивность Vue для отслеживания изменений в переменных
- .slice - разрезать массив на нужное кол-во элементов */ 
-
+ .slice - разрезать массив на нужное кол-во элементов 
+ parseInt() - отбрасывает дробную часть  */ 
+ 
 /*  Закомментированная пагинация   
   const currentPage = ref(1) //переменная текущей страницы 
   const elementsPerPage = ref(9) // сколько элементов будем отображать 
@@ -44,12 +45,12 @@ const totalResults = computed( () => { // переменная которая д
       const leftover = totalLength % limit // возвращаем остаток от деления переменных
       
       if (leftover == 0) { // Если остаток = 0 
-        const fullPages = totalLength / limit // то объявляем переменную FullPages и возвращаем результат деления всех элементво массива на кол-во элементов на одну страницу
+        const fullPages = totalLength / limit // то объявляем переменную FullPages и возвращаем результат деления всех элементов массива на кол-во элементов на одну страницу
         return fullPages
       }
       else { // Если остаток не равен нулю 
-        const fullPages = result
-        return fullPages + 1
+        const fullPages = (parseInt (totalLength/limit) + 1) // Откидываем дробную часть и прибавляем +1 страницу.
+        return fullPages
       }
 })
 
@@ -78,7 +79,7 @@ const totalResults = computed( () => { // переменная которая д
        <div class = "grid-table">
             <div v-for = "car in totalResults" :key="car.id" class="grid-cell">
               <span class = "cell-title"> {{ car.model }} </span>
-              <span class = "cell-subtitle"> {{ result }} </span>
+              <span class = "cell-subtitle"> </span>
             </div>
         </div>
 
