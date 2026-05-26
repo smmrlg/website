@@ -54,14 +54,26 @@ const totalResults = computed( () => { // переменная которая д
       }
 })
 
+const currentPage = ref(1)
+
 const result = computed ( () => { // новый массив result который должен содержать элементы 0-8 из массива cars
+  const startIndex = (currentPage.value - 1) * ITEMS_ON_ONE_PAGE // индекс для начала отрисовки каждой страницы 
+  const endIndex = startIndex + ITEMS_ON_ONE_PAGE // на каком элементе закначиваем 
+  
     let carsArray = [] //временный массив в который мы заносим данные из массива cars 
-    for (let i = 0; i < ITEMS_ON_ONE_PAGE; i++) { // обычный цикл for 
+    for (let i = startIndex; i < endIndex; i++) { // обычный цикл for 
       carsArray[i] = cars.value [i] // элементу i массива carsArray присваиваем элемент i из массива cars 
     }
     return carsArray
 })
 
+ function nextPage() {
+    currentPage.value++
+}
+
+function prevPage () {
+    currentPage.value--
+}
 
 </script>
 
