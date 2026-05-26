@@ -20,8 +20,10 @@
 <script setup>
     const phoneNumber = '+9720507935972';
     const callCompany = () => {
-  // Эта команда заставит браузер открыть звонилку
-  window.location.href = `tel:${phoneNumber}`;
+  // Открывает звонилку
+  window.location.href = "tel:${phoneNumber}"; //$ - синтаксис JS который подставляет переменную 
+  
+  //TODO: Валидация инпута 
 }
 </script>
 

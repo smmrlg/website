@@ -1,0 +1,1 @@
+export const ITEMS_ON_ONE_PAGE = 9;
