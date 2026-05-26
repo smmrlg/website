@@ -54,6 +54,9 @@ const totalResults = computed( () => { // переменная которая д
       }
 })
 
+const result = cars.value.slice (0,9)
+
+
 </script>
 
 <template>
@@ -77,7 +80,7 @@ const totalResults = computed( () => { // переменная которая д
         
         <!-- То что делали вчера -->
        <div class = "grid-table">
-            <div v-for = "car in totalResults" :key="car.id" class="grid-cell">
+            <div v-for = "car in result" :key="car.id" class="grid-cell">
               <span class = "cell-title"> {{ car.model }} </span>
               <span class = "cell-subtitle"> </span>
             </div>
