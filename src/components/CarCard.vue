@@ -104,7 +104,8 @@ function prevPage () {
             </div>
         </div>
 
-        <p> {{ totalResults }} </p>
+         <button class = "pageForward" @click="nextPage" :disabled="currentPage === totalPages"> Вперёд </button>
+        <button class = "pageBack" @click="prevPage" :disabled="currentPage === 1"> Назад </button> -->
 
         
         
