@@ -1,9 +1,15 @@
 .grid-table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 5px;
 }
+
 .grid-cell {
   border: 1px solid #ccc;
   padding: 10px;
+}
+
+.grid-bottom {
+  display: grid;
+  grid-column: 1 / 1;  
 }

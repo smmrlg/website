@@ -99,14 +99,18 @@ function prevPage () {
         <!-- То что делали вчера -->
        <div class = "grid-table">
             <div v-for = "car in result" :key="car.id" class="grid-cell">
-              <span class = "cell-title"> {{ car.model }} </span>
-              <span class = "cell-subtitle"> </span>
+              <span class = "cell-title"> {{ car.model }} {{ car.manufacturer }} </span>
+              <span class = "cell-descriptiion"> </span>
             </div>
+
+        <div class = "grid-bottom">
+          <p> Cтраница {{ currentPage }} из {{ totalResults }}</p>
+          <button class = "pageForward" @click="nextPage" :disabled="currentPage === totalResults"> Вперёд </button>
+          <button class = "pageBack" @click="prevPage" :disabled="currentPage === 1"> Назад </button>
         </div>
-
-         <button class = "pageForward" @click="nextPage" :disabled="currentPage === totalResults"> Вперёд </button>
-        <button class = "pageBack" @click="prevPage" :disabled="currentPage === 1"> Назад </button>
-
+      </div>
+        
+        
         
         
 </template>
