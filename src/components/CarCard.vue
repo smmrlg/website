@@ -101,6 +101,7 @@ function prevPage () {
             <div v-for = "car in result" :key="car.id" class="grid-cell">
               <span class = "cell-title"> {{ car.model }} {{ car.manufacturer }} </span>
               <span class = "cell-descriptiion"> </span>
+              <img class = "cell-image" :src = "car.image">
             </div>
 
         <div class = "grid-bottom">

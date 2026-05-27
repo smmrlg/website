@@ -9,6 +9,11 @@
   padding: 10px;
 }
 
+.cell-image {
+  width: 90%; 
+  border-radius: 15px; 
+}
+
 .grid-bottom {
   display: grid;
   grid-column: 1 / 1;  
