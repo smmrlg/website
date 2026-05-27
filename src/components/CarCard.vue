@@ -102,6 +102,7 @@ function prevPage () {
               <span class = "cell-title"> {{ car.model }} {{ car.manufacturer }} </span>
               <span class = "cell-descriptiion"> </span>
               <img class = "cell-image" :src = "car.image">
+              <button class = "cell-button"> Order </button>
             </div>
 
         <div class = "grid-bottom">
@@ -110,9 +111,6 @@ function prevPage () {
           <button class = "pageBack" @click="prevPage" :disabled="currentPage === 1"> Назад </button>
         </div>
       </div>
-        
-        
-        
         
 </template>
 

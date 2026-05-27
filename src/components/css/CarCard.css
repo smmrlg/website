@@ -6,6 +6,7 @@
 
 .grid-cell {
   border: 1px solid #ccc;
+  display: grid;
   padding: 10px;
 }
 
@@ -14,7 +15,13 @@
   border-radius: 15px; 
 }
 
+.cell-button {
+  align-self: end; 
+  justify-self: center; 
+}
+
 .grid-bottom {
   display: grid;
   grid-column: 1 / 1;  
 }
+
