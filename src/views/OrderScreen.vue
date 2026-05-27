@@ -6,7 +6,7 @@ import LeadForm from '@/components/LeadForm.vue';
 
 <template>
         
-        <CarCard/>
+       <!-- <CarCard/>-->
         <LeadForm/>
        <!-- <CarCard 
         v-for = "car in cars"

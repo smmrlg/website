@@ -55,25 +55,29 @@ const totalResults = computed( () => { // переменная которая д
 })
 
 const currentPage = ref(1)
-
-const result = computed ( () => { // новый массив result который должен содержать элементы 0-8 из массива cars
-  const startIndex = (currentPage.value - 1) * ITEMS_ON_ONE_PAGE // индекс для начала отрисовки каждой страницы 
-  const endIndex = startIndex + ITEMS_ON_ONE_PAGE // на каком элементе закначиваем 
-  
-    let carsArray = [] //временный массив в который мы заносим данные из массива cars 
-    for (let i = startIndex; i < endIndex; i++) { // обычный цикл for 
-      carsArray[i] = cars.value [i] // элементу i массива carsArray присваиваем элемент i из массива cars 
-    }
-    return carsArray
-})
-
- function nextPage() {
+ 
+function nextPage() {
     currentPage.value++
 }
 
 function prevPage () {
     currentPage.value--
 }
+
+const result = computed ( () => { // новый массив result который должен содержать элементы 0-8 из массива cars
+    const startIndex = (currentPage.value - 1) * ITEMS_ON_ONE_PAGE // индекс для начала отрисовки каждой страницы 
+    const endIndex = startIndex + ITEMS_ON_ONE_PAGE // на каком элементе закначиваем 
+
+    let carsArray = [] //временный массив в который мы заносим данные из массива cars 
+    for (let i = startIndex; i < endIndex && i < cars.value.length; i++) { // обычный цикл for 
+      carsArray.push (cars.value[i]) // элементу i массива carsArray присваиваем элемент i из массива cars 
+    } //.push избавляет от undefined 
+    return carsArray
+})
+
+
+
+
 
 </script>
 
@@ -104,8 +108,8 @@ function prevPage () {
             </div>
         </div>
 
-         <button class = "pageForward" @click="nextPage" :disabled="currentPage === totalPages"> Вперёд </button>
-        <button class = "pageBack" @click="prevPage" :disabled="currentPage === 1"> Назад </button> -->
+        <button class = "pageForward" @click="nextPage" :disabled="currentPage === totalResults"> Вперёд </button>
+        <button class = "pageBack" @click="prevPage" :disabled="currentPage === 1"> Назад </button>
 
         
         
