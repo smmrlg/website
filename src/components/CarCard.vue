@@ -61,9 +61,9 @@ const result = computed ( () => { // новый массив result которы
   const endIndex = startIndex + ITEMS_ON_ONE_PAGE // на каком элементе закначиваем 
   
     let carsArray = [] //временный массив в который мы заносим данные из массива cars 
-    for (let i = startIndex; i < endIndex; i++) { // обычный цикл for 
-      carsArray[i] = cars.value [i] // элементу i массива carsArray присваиваем элемент i из массива cars 
-    }
+    for (let i = startIndex; i < endIndex && i < cars.value.length; i++) { // обычный цикл for, вторая проверка нужна чтобы на третьей страницы цикл не забивал массив пустыми данными
+      carsArray.push(cars.value [i]) // элементу i массива carsArray присваиваем элемент i из массива cars 
+    }  // .push исправляет ошибку
     return carsArray
 })
 
@@ -104,8 +104,8 @@ function prevPage () {
             </div>
         </div>
 
-         <button class = "pageForward" @click="nextPage" :disabled="currentPage === totalPages"> Вперёд </button>
-        <button class = "pageBack" @click="prevPage" :disabled="currentPage === 1"> Назад </button> -->
+         <button class = "pageForward" @click="nextPage" :disabled="currentPage === totalResults"> Вперёд </button>
+        <button class = "pageBack" @click="prevPage" :disabled="currentPage === 1"> Назад </button>
 
         
         
