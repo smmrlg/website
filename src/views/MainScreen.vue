@@ -32,10 +32,10 @@
 </script>
 
 <template>
-        <LeadForm/>
+    <LeadForm/>
 
-        
-        <section class="main-content"> <!-- Объединяем логические блоки контента -->
+    <!-- Закомментированно до лучших времён-->
+    <!--  <section class="main-content">  Объединяем логические блоки контента 
             <div class="full-name">
                 <h1 class="name"> FirstName SecondName </h1>
                 <h2 class="brief-description"> Secondary text. </h2>
@@ -43,15 +43,15 @@
             
             <img src="https://picsum.photos/400/500?random=2" class="responsive-img"></img>
             
-            <div class="description"> <!-- Текстовое описание -->
+            <div class="description">  Текстовое описание 
                 <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
                 <p> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             </div>
 
             <button class="read-more"> Узнать больше </button>
-        </section>
+        </section> -->
 
-    <main class="feed">
+    <!-- <main class="feed">
         <ContentBlock
             v-for = "block in data"
             :key = "block.id"
@@ -61,11 +61,11 @@
             :paragraphs="block.paragraphs" 
             :buttonTitle="block.buttonTitle"      
         /> 
-        <!-- 
+        
             v-for = "block in data" - v-for - цикл во Vue. Цикл берёт массив data и заносит каждый элемент массива в переменную block (которая тут же и объявлена)
             :key = "block.id" - двоеточие - сокращение от v-bind:, двоеточие нужно чтобы показать Vue что мы хотим использовать JS код. :key необходим для Vue чтобы сборщик не запутался где какой элемент (поэтому необходимо каждому объекту присваивать уникальный id)
             :mainTitle = "block.mainTitle"  - block.{{name}} означает что мы обращаемся к конкретному свойству объекта которые сейчас лежит в переменной block.
-        -->
+        
 
         <section class="content" v-for="i in 5" :key="i">
             <img :src="`https://picsum.photos/400/500?random=${i+2}`" alt="Доп контент" class="responsive-img">
@@ -75,79 +75,8 @@
                 <button class="read-more"> Узнать больше </button>
             </div>
         </section>
-    </main>
+    </main> -->
 
 </template>
 
-<style scoped> 
-        .feed {
-            display: flex;
-            flex-direction: column;
-            gap: 20px; /* Расстояние между карточками */
-            padding: 16px;
-            background-color: #f8f9fa; /* Легкий фон страницы для контраста */
-        }
-        
-        .full-name {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            padding: 15px;
-        }
-
-        .description {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-
-        }
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            
-        }
-
-        .read-more {
-            /* Форма и отступы */
-            padding: 12px 36px;
-            border-radius: 30px; /* Делает кнопку овальной */
-  
-            /* Цвета */
-            background-color: #f07bd8; /* Глубокий черный */
-            color: black; 
-            border: 2px solid #f07bd8;
-  
-            /* Текст */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-  
-            /* Анимация и эффекты */
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .read-more:hover {
-            background-color: #f07bd8;
-            color: #111111;
-            box-shadow: 0 0 15px rgba(255, 42, 133, 0.5); /* Розовое свечение */
-            transform: translateY(-2px); /* Кнопка чуть приподнимается */
-        }       
-
-        .read-more:active {
-            transform: translateY(1px); /* Эффект нажатия */
-        }
-
-        .full-name {
-            background-color: #111111;
-            color: white;
-        }
-        
-        .main-pictures {
-            display: flex;
-            height: 100 px;
-        }
-</style>
+<style src="./css/MainScreen.css" scoped> </style>

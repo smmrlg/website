@@ -1,0 +1,70 @@
+        .feed {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Расстояние между карточками */
+            padding: 16px;
+            background-color: #f8f9fa; /* Легкий фон страницы для контраста */
+        }
+        
+        .full-name {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+        }
+
+        .read-more {
+            /* Форма и отступы */
+            padding: 12px 36px;
+            border-radius: 30px; /* Делает кнопку овальной */
+  
+            /* Цвета */
+            background-color: #f07bd8; /* Глубокий черный */
+            color: black; 
+            border: 2px solid #f07bd8;
+  
+            /* Текст */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+  
+            /* Анимация и эффекты */
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #f07bd8;
+            color: #111111;
+            box-shadow: 0 0 15px rgba(255, 42, 133, 0.5); /* Розовое свечение */
+            transform: translateY(-2px); /* Кнопка чуть приподнимается */
+        }       
+
+        .read-more:active {
+            transform: translateY(1px); /* Эффект нажатия */
+        }
+
+        .full-name {
+            background-color: #111111;
+            color: white;
+        }
+        
+        .main-pictures {
+            display: flex;
+            height: 100 px;
+        }
