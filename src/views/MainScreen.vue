@@ -1,6 +1,7 @@
 <script setup>
     import ContentBlock from '@/components/ContentBlock.vue';
     import { ref } from 'vue'; // ref обязательно нужно импортировать.
+    import LeadForm from '@/components/LeadForm.vue';
 
     const data = ref ([ // Объявляем реактивный массив data, ref() - функция Vue которая делает массив реактивным. Объявления массива стандартный JS синтаксис в квадратных скобках.  
         {              // Массив называется реактивным потому что если мы изменим данные, то Vue автоматически подстроится и отобразит нам новые данные.
@@ -31,6 +32,9 @@
 </script>
 
 <template>
+        <LeadForm/>
+
+        
         <section class="main-content"> <!-- Объединяем логические блоки контента -->
             <div class="full-name">
                 <h1 class="name"> FirstName SecondName </h1>
@@ -145,8 +149,5 @@
         .main-pictures {
             display: flex;
             height: 100 px;
-            
-
-
         }
 </style>

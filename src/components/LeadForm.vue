@@ -10,8 +10,11 @@
         </div>
 
         <div class="buttons">
-            <button class="call-back"> Оставить заявку</button>
-            <button class="let-me-call" @click="callCompany"> Или позвоните сами </button>
+            <router-link to="/about">
+                <button class="call-back"> О нас </button>
+            </router-link>
+
+            <button class="let-me-call" @click="callCompany"> Позвоните сейчас </button>
         </div>
     </form>
 
@@ -20,10 +23,10 @@
 <script setup>
     const phoneNumber = '+9720507935972';
     const callCompany = () => {
-  // Открывает звонилку
-  window.location.href = "tel:${phoneNumber}"; //$ - синтаксис JS который подставляет переменную 
+    // Открывает звонилку
+    window.location.href = "tel:${phoneNumber}"; //$ - синтаксис JS который подставляет переменную 
   
-  //TODO: Валидация инпута 
+    //TODO: Валидация инпута 
 }
 </script>
 
