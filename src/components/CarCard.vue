@@ -1,6 +1,6 @@
 <script setup>
 import {ref, computed} from 'vue';
-import carsData from './CarData.json'
+import carsData from '@/data/CarData.json'
 import { ITEMS_ON_ONE_PAGE } from '@/constants.js'
 
 // здесь идет функция которая отправляет запрос к бекенду и возвращает нам массив 
@@ -60,7 +60,7 @@ const result = computed ( () => { // новый массив result которы
   const startIndex = (currentPage.value - 1) * ITEMS_ON_ONE_PAGE // индекс для начала отрисовки каждой страницы 
   const endIndex = startIndex + ITEMS_ON_ONE_PAGE // на каком элементе закначиваем 
   
-    let carsArray = [] //временный массив в который мы заносим данные из массива cars 
+    let carsArray = []  // временный массив в который мы заносим данные из массива cars 
     for (let i = startIndex; i < endIndex && i < cars.value.length; i++) { // обычный цикл for, вторая проверка нужна чтобы на третьей страницы цикл не забивал массив пустыми данными
       carsArray.push(cars.value [i]) // элементу i массива carsArray присваиваем элемент i из массива cars 
     }  // .push исправляет ошибку
