@@ -3,7 +3,6 @@ import MainScreen from '@/views/MainScreen.vue'
 import About from '@/views/About.vue'
 import OrderScreen from '@/views/OrderScreen.vue'
 import LoginScreen from '@/views/LoginScreen.vue'
-import LeadForm from '@/components/LeadForm.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
