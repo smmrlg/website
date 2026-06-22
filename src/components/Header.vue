@@ -24,7 +24,7 @@ import Menu from './Menu.vue';
       </router-link> 
     </div>
 
-    <LoginButton/>
+    <!-- <LoginButton/>-->
     <Menu/>
   
   </header>
@@ -65,6 +65,7 @@ import Menu from './Menu.vue';
 .right {
   display: flex;
   justify-content: flex-end;
+  padding-right: 15vw;
 }
 
 /* Стилизация элементов */
