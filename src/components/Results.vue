@@ -1,7 +1,8 @@
 <template> 
-    <div class = "test">
-        <h1> Блок контента который мы видим как только заходим на сайт </h1>
+    <div class = "test"> 
+        <h1> Блок контента с результатами </h1>
     </div>
+    
 </template>
 
 <style scoped> 
@@ -13,5 +14,4 @@
         border-radius: 12px; /* Немного скруглим углы для красоты */
         margin: auto auto;
     }
-
-</style> 
+</style>

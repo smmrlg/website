@@ -20,6 +20,8 @@
       </nav>
     </div>
   </div>
+  <!-- TODO: переделать кнопки на те что задуманы, Online Booking и т.д., -->
+
 </template>
 
 <script setup>
@@ -79,6 +81,5 @@ const isOpen = ref(false)
 .close-button {
     background-color: #000000;
     color: white;
-
 }
 </style>

@@ -63,13 +63,13 @@ onUnmounted(() => {
         <div class = "calendar-header"> 
             <p class = "timer"> {{ currentTime }} </p>
             <p class = "header-date"> {{ currentDay }} {{ textMonth }} {{ currentYear }} г. </p>
-            
+            <div>{{ textMonth }} {{ currentYear }}</div>
         </div>
         <div class = "calendar-body"> 
             <div v-for = "day in weekDays" :key = "day"> {{ day }} </div>
+            <div class = "days">  
+            </div>
         </div>
-        
-       
     </div>
 
 
@@ -79,8 +79,16 @@ onUnmounted(() => {
     .calendar {
         width: 80%;
         height: 400px;
-        background-color: rgb(43, 42, 42);
-        border-color: rgb(40, 194, 40);   
+        background-color: rgb(95, 93, 93);
+        border-color: rgb(77, 77, 77);
+        color: white;   
+    }
+
+    .calendar-header { 
+        display: grid;
+        gap: 3px;
+        margin: 3px;
+
     }
 
     .calendar-body {

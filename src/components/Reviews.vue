@@ -1,10 +1,10 @@
-<template> 
-    <div class = "test">
-        <h1> Блок контента который мы видим как только заходим на сайт </h1>
+<template>
+    <div class = "test"> 
+        <h1> Блок контента с отзывами </h1>
     </div>
 </template>
 
-<style scoped> 
+<style scoped>
     .test {
         width: 90%;
         height: 750px;

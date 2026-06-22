@@ -1,14 +1,35 @@
 <script setup>
-    import { ref } from 'vue'; // ref обязательно нужно импортировать.
-    import LeadForm from '@/components/LeadForm.vue';
-    import content from '@/data/ContentBlockData.json'
+    import { onMounted, onUnmounted, ref, shallowRef } from 'vue'; // ref обязательно нужно импортировать.
+   // import LeadForm from '@/components/LeadForm.vue';
+   // import content from '@/data/ContentBlockData.json'
+    import InitialContentBlock from '@/components/InitialContentBlock.vue';
+    import Results from '@/components/Results.vue';
+    import BeforeAfter from '@/components/BeforeAfter.vue';
+    import Reviews from '@/components/Reviews.vue';
 
-    const data = ref(content)
+   // const data = ref(content)
+
+    const components = shallowRef([ //shallowRef вместо обычного ref для оптимизации
+            InitialContentBlock,
+            Results,
+            BeforeAfter,
+            Reviews
+    ])
+    const visibleComponents = ref ([
+                components[0], 
+                components[1]
+    ])
+    
+    const currentIndex = ref(0) // переменная для текущего компонента
+   
+
 </script>
 
 <template>
-    <LeadForm/>
 
+
+
+    <!-- <LeadForm/> -->
     <!-- Закомментированно до лучших времён-->
     <!--  <section class="main-content">  Объединяем логические блоки контента 
             <div class="full-name">
@@ -51,7 +72,7 @@
             </div>
         </section>
     </main> -->
-
+    
 </template>
 
 <style src="./css/MainScreen.css" scoped> </style>
