@@ -1,16 +1,21 @@
 <script setup>
-import { ref, onMounted, onUnmounted} from "vue";
+import { ref, onMounted, onUnmounted, computed} from "vue";
+import content from "@/data/TestData.json"; 
 const isSidebarOpen = ref(false);
-const isScrolled = ref(false);
+// const isScrolled = ref(false);
+
+const items = content;
+const currentContainerIndex = ref(0)
+const step = 200; 
 
 const handleScroll = () => { 
-    if (window.scrollY > 50) { 
-        isScrolled.value = true; 
-    }
-    else { 
-        isScrolled.value = false; 
-    }
+    let index = Math.floor(window.scrollY/step);
+    currentContainerIndex.value = index; 
 }
+
+const currentItem = computed ( () => { 
+    return items[currentContainerIndex.value]; 
+})
 
 onMounted( () => {
     window.addEventListener('scroll', handleScroll);
@@ -27,21 +32,14 @@ onUnmounted( () => {
     <div class="screen-container">
 
       <Transition name="fade" mode="out-in">  
-            <div v-if="!isScrolled" class="BMW"> 
-                <p> What is Lorem Ipsum? Div container 1</p>
-                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-            </div> 
-        
-            <div v-else class="Ford"> 
-                <p> Why do we use it? Div container 2</p>
-                <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+            <div v-if="currentItem" :key="currentItem.id" :class="currentItem.class"> 
+                <p> {{ currentItem.title }} </p>
+                <p> {{ currentItem.text }} </p>
             </div>
       </Transition>
 
-        <!--<div v-if="isScrolled" class="Audi"> 
-            <p> Where does it come from? Div container 3</p>
-            <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-        </div>  -->
+      
+
 
         <div class="content-left">
             <h1>"Ifur Kavua"</h1>
@@ -68,8 +66,14 @@ onUnmounted( () => {
             </nav>
         </div>
     </div>
+
+    <div class="scroll-spacer"></div>
 </template>
 
 <style scoped>
 @import "@/views/css/Beauty.css";
+.scroll-spacer { 
+    height: 1500px;
+   /* background-color: red; */
+}
 </style>

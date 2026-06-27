@@ -21,7 +21,11 @@
     ])
     
     const currentIndex = ref(0) // переменная для текущего компонента
-   
+    
+    const itemRefs = ref([])
+    const setItemRef = (el, index) => {
+                if (el) itemRefs.value[index] = el
+            }
 
 </script>
 
