@@ -5,12 +5,11 @@ import './App.css';
 </script>
 
 <template>
-  <Header/>
-  <Menu/> 
+  <!-- <Header/> -->
+  <!-- <Menu/> --> 
   <main class="main-content">
     <router-view />
   </main>
 </template>
 
-<style> 
-</style>
+<style></style>
